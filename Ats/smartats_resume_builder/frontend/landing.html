@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SmartATS - Build a Resume That Gets You Hired</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5048e5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#121121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="text-white font-black text-lg">S</span>
+</div>
+<span class="text-xl font-extrabold tracking-tight">SmartATS</span>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#features">Features</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#pricing">Pricing</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="/editor">Editor</a>
+</nav>
+<div class="flex items-center gap-4">
+<a href="/login" class="text-sm font-semibold hover:text-primary px-4 py-2">Sign In</a>
+<a href="/login" class="bg-primary text-white text-sm font-bold px-5 py-2.5 rounded-lg shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                        Start Free
+                    </a>
+</div>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-32">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold mb-6">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                        NEW: AI INTERVIEW PREP
+                    </div>
+<h1 class="text-5xl lg:text-7xl font-black text-slate-900 dark:text-white leading-[1.1] tracking-tight mb-6">
+                        Build a Resume <br/><span class="text-primary">That Gets You Hired</span>
+</h1>
+<p class="text-lg lg:text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-lg leading-relaxed">
+                        Use AI to tailor your resume to job descriptions and stand out to recruiters with data-backed content optimization.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="/login" class="bg-primary text-white text-lg font-bold px-8 py-4 rounded-xl shadow-xl shadow-primary/30 hover:scale-[1.02] transition-transform text-center">
+                            Start Building for Free
+                        </a>
+<a href="/editor" class="flex items-center justify-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-lg font-bold px-8 py-4 rounded-xl hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined">play_circle</span>
+                            Try Demo
+                        </a>
+</div>
+<div class="mt-8 flex items-center gap-4">
+<div class="flex -space-x-2">
+<img alt="" class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900" data-alt="User avatar profile picture 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6_OEeooEyIIWqk7XYGd9McGVR9U7ZMa3ecx6y4LyZVjiRrJJ1UAEb71mTJDBN0dkNwjsf0Igb9sx90l5O1SvontWutIiuApaz29OEPV-1MSyFwp9tgdQW7oHLGlDUxBeDfR1o-P2oy-Fwmzh79nks9lkzgkgfFLnNW1AMjCN80JRHkvXv13aKNVXPEn98i-xOQ87Xq1_wUVjZMWiqXxI7dZUM88SMhRaLnEHlViwkfzGpKzoRz9DNbIpR_yp1CS8-DlmbgTsUnWdM"/>
+<img alt="" class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900" data-alt="User avatar profile picture 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGLUD7MNsiIlDS42wNhWKyItbi5iUMlW5AeRY6sjJS4-Wxc1GTpeu9podiTXOQhHBP9Pj3oFigEYgINH3gWr9T5zXa2JVCFmRexdQ0esh1sVQMRjK5GkXh_bwJwnzu2lbgkEz6-BSyjj61yHzlBRJBpeYsEt_LL5Wa54eJbXdJFDfHnDdJ5wUNZY99JmiKFp8DsWslbhYg0cQAnooK8Jc9HZOAlNsTp3v_Q1lboBBYEwCNbWT3_Y4NCoAVS2-YF57JFqOJHLLVhbh2"/>
+<img alt="" class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900" data-alt="User avatar profile picture 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuQaBEbCcjlTBO-rl6XmCYIH7zYJYWhIDCzDx_r7-ceWfQhnr76gedD2bUdhYextD8jXCZBXVClUfnTOGYwETnUggzWMiPnfkymYSzs8SDkGxj1xVMDbUCnP0EZCpKTXlfoKRlB44tULrxSLgxwU7IpdEQ_rkOw9xJ_KelNwMITQXAIOyQCSYfBcPJDO5xYcBNc8mxzLOjlTMtWjr6lV01BdYdQrSkNHYPKXG1yE8NAJgSElqZ9WDRNNtxI0PlsuyH-uPKT2GNDvxK"/>
+</div>
+<p class="text-sm text-slate-500 font-medium">Joined by 50,000+ job seekers</p>
+</div>
+</div>
+<div class="relative lg:h-[600px] flex items-center justify-center">
+<div class="absolute inset-0 bg-primary/5 rounded-3xl -rotate-3 transform scale-105"></div>
+<div class="relative w-full aspect-[4/5] max-w-md bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden transform transition-all hover:scale-[1.01]">
+<div class="p-6 space-y-4">
+<div class="h-4 w-1/3 bg-slate-100 dark:bg-slate-800 rounded"></div>
+<div class="h-8 w-2/3 bg-slate-200 dark:bg-slate-700 rounded"></div>
+<div class="space-y-2 pt-4">
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded"></div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded"></div>
+<div class="h-2 w-3/4 bg-slate-100 dark:bg-slate-800 rounded"></div>
+</div>
+<div class="p-4 bg-primary/5 border border-primary/20 rounded-lg">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">bolt</span>
+<span class="text-xs font-bold text-primary">AI SUGGESTION</span>
+</div>
+<p class="text-xs text-slate-600 dark:text-slate-400 italic">"Quantify your achievement: Rephrase to 'Increased sales by 25% over 6 months through targeted lead gen strategies'."</p>
+</div>
+<div class="space-y-3">
+<div class="h-4 w-1/4 bg-slate-200 dark:bg-slate-700 rounded"></div>
+<div class="grid grid-cols-3 gap-2">
+<div class="h-8 bg-slate-100 dark:bg-slate-800 rounded-full"></div>
+<div class="h-8 bg-slate-100 dark:bg-slate-800 rounded-full"></div>
+<div class="h-8 bg-slate-100 dark:bg-slate-800 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Logo Cloud -->
+<section class="py-12 bg-white dark:bg-slate-900/50 border-y border-slate-100 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4">
+<p class="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-10">Trusted by candidates at top companies</p>
+<div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all">
+<img alt="Google" class="h-8" data-alt="Google company logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHPsrSfy4qiy7mSz-moX6KE5dfPBfy43YJR8YJb_Idz-GsCC0ssMEpRzdrioRuJ7qkgVkPobeogDGNLFxs7NdAKP5Ztg6QKPDYIF7Volf0dEgsL6BmGB9R4yQTG22PEIVLCjraa1oWhS9VPktCpgtPAjj82ig-MXMZ9J947lEzAPSudG0BwaSOZmk6DT6t9LPLapWnirs8lKymvlndPS97AWnFia2hxNQVkAkA4Zumb5vIxpTEvau7kf4WHhIf2OwcG2rKn67s_9wn"/>
+<img alt="Amazon" class="h-8" data-alt="Amazon company logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzLY2GxL0wrqmaipxT_yXHo7b6FJB_bvxVhvfq4cGVK71Abc2S4ofG1vT5tXYSkvJOFf2X3NJWAmRQ6GIlumzdGrPT-bHS8tQsSfw9ZSVvyOsAe0blBE_VOV-meUjx1lHD2B4LPM31z8b3Dnfeu-Np6-0t4FFqJ5HUoXzytpOOVbSaGj7vdw_qk5b0OyFVJvzOuGkuBVzppuR4p44Jos1U6ZSvdAZ7BP1Gh6-XWi2jK3zhO-aqqR0PV8m7zlEIkvHoG1nvx17o1TqX"/>
+<img alt="Netflix" class="h-8" data-alt="Netflix company logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY4Wl8WXIz61a_9AQNcT0bh3xXMKFDcYPTYIkoo1pyBpy5IYNjhWvPlW6v7NTqqXKHjjDONuMjRdkf1FixgfwJ0zqx5oY7NpsVGxu-MZ3wEl4ZZDFQy8LnSbDkqTfXFHdsvOE5LpVYTzjZ_av_A68nAvVNnloAdQZGY5oVNEfqXaeZYJVqJX6w_1cYpYnZxCnyFI3uNVAyhECrWL2YAqejwO7MkcnPv3FXywWkezLr67IUX8ut_b-cieLoGjB9mVCAji3WgIQQe-0E"/>
+<img alt="Microsoft" class="h-8" data-alt="Microsoft company logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBREfqWqj4eTkLEveh72eRWxIorQkvWW6cxB6qbdHtcw1rEHRxRpou_7rR84AGohmTk55kq1tjy5Uvzbh-HPgrpJ90JSFL2K1vj2v2VNftpv4KpSjdespKc3IEFGuL6jBFGu4UztjmmRVEuZfbCNT0WXr4-pReQAaSikidY0UK6uCDkt9IgENFbTkSgsEdxvSF2Z0OXgCnCV8DpHFAbpMoQ8WrIAi0-yD0gTqYw65fLhfDbkffPTq5ILAPdiz3OYw3sDkv_yKjEniGr"/>
+<img alt="Apple" class="h-8" data-alt="Apple company logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP-i7nNllb57Ws1lILT0yCBiMYTZiDFjlBIxD2JVfOOKRLHXlYryeGz25A2IipiDA5f6XizaeVq_g4jrUvyPOwwYTkasKKXJcXU0gIK-9gviz8rAAZAbvuc15AsWHXvftd4PjQ_PweUssmxQUCLgGZbYAmSjPwXwt8BPAGlmTZnLQEA89ULeo8kwu_wanKYxYvRniGcqYxwbpWpqgmFgJ2P-cD8UEtvp1tGoxmO0GWHTwcizADz9oonj_JmOnuROXDsm0QpP9CmCC4"/>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="py-24 lg:py-32 bg-slate-50 dark:bg-background-dark" id="features">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-20">
+<h2 class="text-primary font-bold tracking-wider uppercase text-sm mb-4">Powerful Features</h2>
+<p class="text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight">Optimize Your Career Path</p>
+<p class="mt-4 text-lg text-slate-600 dark:text-slate-400">Our intelligent platform ensures your resume passes every test and beats the algorithm.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:-translate-y-1 transition-all">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+</div>
+<h3 class="text-xl font-bold mb-4">AI-Powered Optimization</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Scan job descriptions and automatically align your skills and experience with what recruiters are looking for.
+                        </p>
+</div>
+<!-- Feature 2 -->
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:-translate-y-1 transition-all">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">description</span>
+</div>
+<h3 class="text-xl font-bold mb-4">ATS-Friendly Templates</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Clean, professional layouts designed to be parsed perfectly by applicant tracking systems every single time.
+                        </p>
+</div>
+<!-- Feature 3 -->
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:-translate-y-1 transition-all">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">edit_note</span>
+</div>
+<h3 class="text-xl font-bold mb-4">Real-time Suggestions</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Get instant feedback on your writing style, impact verbs, and phrasing improvements as you type.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-24 lg:py-32" id="pricing">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4">Simple, Transparent Pricing</h2>
+<p class="text-lg text-slate-600 dark:text-slate-400">Choose the plan that fits your career goals.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+<!-- Free -->
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 flex flex-col">
+<h3 class="text-lg font-bold mb-2">Free</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-4xl font-black">$0</span>
+<span class="text-slate-500">/mo</span>
+</div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+                                1 Resume Download
+                            </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+                                Basic ATS Templates
+                            </li>
+<li class="flex items-center gap-3 text-sm opacity-50">
+<span class="material-symbols-outlined text-slate-400 text-lg">block</span>
+                                AI-Tailoring
+                            </li>
+</ul>
+<a href="/login" class="w-full py-3 rounded-lg border-2 border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors text-center block">
+                            Get Started
+                        </a>
+</div>
+<!-- Pro -->
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border-2 border-primary ring-4 ring-primary/10 flex flex-col relative scale-105 shadow-2xl">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full">
+                            Most Popular
+                        </div>
+<h3 class="text-lg font-bold mb-2">Pro</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-4xl font-black">$19</span>
+<span class="text-slate-500">/mo</span>
+</div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+                                Unlimited Resumes
+                            </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+                                Advanced AI Optimization
+                            </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+                                Cover Letter Builder
+                            </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+                                Interview Prep AI
+                            </li>
+</ul>
+<a href="/login" class="w-full py-3 rounded-lg bg-primary text-white font-bold shadow-lg shadow-primary/30 hover:bg-primary/90 transition-all text-center block">
+                            Upgrade to Pro
+                        </a>
+</div>
+<!-- Enterprise -->
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 flex flex-col">
+<h3 class="text-lg font-bold mb-2">Enterprise</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-4xl font-black">$49</span>
+<span class="text-slate-500">/mo</span>
+</div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+                                Everything in Pro
+                            </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+                                Multi-user Collaboration
+                            </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+                                White-label Branding
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-lg border-2 border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                            Contact Sales
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 px-4">
+<div class="max-w-5xl mx-auto rounded-3xl bg-primary p-12 lg:p-20 text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+<h2 class="text-4xl lg:text-5xl font-black text-white mb-8 relative z-10">Ready to land your dream job?</h2>
+<a href="/login" class="inline-block bg-white text-primary text-xl font-bold px-10 py-5 rounded-2xl shadow-2xl hover:scale-105 transition-transform relative z-10">
+                    Get Started for Free
+                </a>
+<p class="mt-6 text-primary-light text-white/80 font-medium relative z-10">No credit card required. Cancel anytime.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-20 pb-10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-16">
+<div class="col-span-2 lg:col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="text-white font-black text-lg">S</span>
+</div>
+<span class="text-xl font-extrabold tracking-tight">SmartATS</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 max-w-xs leading-relaxed">
+                        Helping job seekers navigate the modern recruitment landscape with advanced AI tools and expert-designed templates.
+                    </p>
+</div>
+<div>
+<h4 class="font-bold mb-6">Product</h4>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Resume Builder</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cover Letter</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">ATS Scan</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Pricing</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Company</h4>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Social</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-100 dark:border-slate-800 pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-slate-400">
+<p>© 2026 SmartATS. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Cookie Settings</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
