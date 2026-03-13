@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SmartATS - Resume Editor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                "primary": "#5048e5",
+                "background-light": "#f6f6f8",
+                "background-dark": "#121121",
+            },
+            fontFamily: {
+                "display": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+    },
+}
+</script>
+<style>
+body { font-family: 'Inter', sans-serif; }
+.resume-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+@media print {
+    body * { visibility: hidden; }
+    #resumePreview, #resumePreview * { visibility: visible; }
+    #resumePreview { position: absolute; left: 0; top: 0; }
+}
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<div class="flex h-screen flex-col">
+<!-- Top Navigation Bar -->
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 flex items-center justify-between z-10">
+<div class="flex items-center gap-3">
+<a href="/" class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+<span class="text-white font-black text-xl">S</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">SmartATS</h2>
+</a>
+<div id="saveStatus" class="ml-6 px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">All changes saved</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-lg">
+<button class="px-4 py-1.5 text-sm font-medium rounded-md bg-white dark:bg-slate-700 shadow-sm">Modern</button>
+<button class="px-4 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-400">Executive</button>
+<button class="px-2 py-1.5"><span class="material-symbols-outlined text-lg">expand_more</span></button>
+</div>
+<div class="h-6 w-px bg-slate-200 dark:border-slate-700"></div>
+<button id="saveBtn" class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-lg">save</span>
+Save Draft
+</button>
+<button id="downloadBtn" class="flex items-center gap-2 px-5 py-2 text-sm font-bold text-white bg-primary hover:bg-primary/90 rounded-lg transition-all shadow-sm shadow-primary/20">
+<span class="material-symbols-outlined text-lg">download</span>
+Download PDF
+</button>
+</div>
+</header>
+<main class="flex-1 flex overflow-hidden">
+<!-- Left Sidebar: Section Navigation -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col p-4 gap-2 overflow-y-auto no-scrollbar">
+<div class="mb-4">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-3">Resume Sections</p>
+</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 group transition-colors" href="#contact">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">person</span>
+<span class="text-sm font-medium">Contact Info</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 group transition-colors" href="#summary">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">description</span>
+<span class="text-sm font-medium">Summary</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary group transition-colors" href="#experience">
+<span class="material-symbols-outlined text-xl fill-1">work</span>
+<span class="text-sm font-bold">Experience</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 group transition-colors" href="#education">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">school</span>
+<span class="text-sm font-medium">Education</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 group transition-colors" href="#skills">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">build</span>
+<span class="text-sm font-medium">Skills</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 group transition-colors" href="#certifications">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">verified</span>
+<span class="text-sm font-medium">Certifications</span>
+</a>
+<div class="mt-auto p-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Completion</span>
+<span class="text-xs font-bold text-primary">75%</span>
+</div>
+<div class="w-full h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 75%"></div>
+</div>
+<p class="text-[10px] text-slate-400 mt-2">Almost ready! Add certifications to reach 100%.</p>
+</div>
+</aside>
+<!-- Center: Live Preview Canvas -->
+<section class="flex-1 bg-background-light dark:bg-background-dark overflow-y-auto p-12 flex justify-center no-scrollbar">
+<div id="resumePreview" class="w-full max-w-[800px] bg-white dark:bg-slate-800 min-h-[1050px] h-fit resume-shadow rounded-sm flex flex-col p-12">
+<!-- Resume content will be dynamically rendered here -->
+</div>
+</section>
+<!-- Right Sidebar: AI Optimization Panel -->
+<aside class="w-80 border-l border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col overflow-y-auto no-scrollbar">
+<div class="p-6">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold text-slate-900 dark:text-slate-100">AI Optimization</h3>
+<span class="material-symbols-outlined text-primary">auto_fix_high</span>
+</div>
+<!-- Match Score Gauge -->
+<div class="flex flex-col items-center mb-8 bg-slate-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-100 dark:border-slate-800">
+<div class="relative flex items-center justify-center mb-4">
+<svg class="w-24 h-24 transform -rotate-90">
+<circle class="text-slate-200 dark:text-slate-700" cx="48" cy="48" fill="transparent" r="42" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="48" cy="48" fill="transparent" r="42" stroke="currentColor" stroke-dasharray="264" stroke-dashoffset="39.6" stroke-width="8"></circle>
+</svg>
+<span id="atsScore" class="absolute text-2xl font-black text-slate-900 dark:text-white">85%</span>
+</div>
+<p class="text-sm font-semibold text-slate-900 dark:text-slate-100">ATS Match Score</p>
+<p class="text-xs text-slate-500 mt-1">Target: <span class="font-bold">Software Engineer</span></p>
+</div>
+<!-- Optimization Tips -->
+<div class="flex flex-col gap-4">
+<h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Top Suggestions</h4>
+<div id="suggestionsContainer">
+<div class="p-4 bg-amber-50 dark:bg-amber-900/10 border border-amber-100 dark:border-amber-900/20 rounded-xl">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-amber-500 text-lg mt-0.5">lightbulb</span>
+<div class="flex-1">
+<p class="text-sm font-bold text-amber-900 dark:text-amber-200 mb-1">Get Started</p>
+<p class="text-xs text-amber-800 dark:text-amber-300/80 leading-relaxed">Click "Full AI Audit" to analyze your resume against a job description</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-auto p-6 border-t border-slate-200 dark:border-slate-800">
+<button id="aiAuditBtn" class="w-full py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-bold rounded-xl flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">psychology</span>
+Full AI Audit
+</button>
+</div>
+</aside>
+</main>
+</div>
+<script src="js/api.js"></script>
+<script src="js/editor-sections.js"></script>
+<script src="js/editor.js"></script>
+</body>
+</html>
