@@ -1,11 +1,10 @@
 # 🚀 SmartATS Resume Builder
 
-An enterprise-grade AI-powered ATS (Applicant Tracking System) Resume Builder with microservices architecture. Build ATS-optimized resumes with intelligent keyword suggestions, real-time scoring, and professional templates.
+An AI-powered ATS (Applicant Tracking System) Resume Builder that helps you create optimized resumes with intelligent suggestions, real-time scoring, and professional templates.
 
-![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Node](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)
-![Python](https://img.shields.io/badge/python-%3E%3D3.9-blue.svg)
 
 ## 📋 Table of Contents
 
@@ -18,270 +17,142 @@ An enterprise-grade AI-powered ATS (Applicant Tracking System) Resume Builder wi
 - [Running the Application](#-running-the-application)
 - [API Documentation](#-api-documentation)
 - [Project Structure](#-project-structure)
-- [Development](#-development)
-- [Testing](#-testing)
-- [Deployment](#-deployment)
 - [Contributing](#-contributing)
 - [License](#-license)
 
 ## ✨ Features
 
 ### Core Features
-- 🤖 **AI-Powered Resume Analysis** - Intelligent keyword extraction and ATS scoring
-- 📊 **Real-time ATS Score** - Get instant feedback on resume optimization
-- 🎨 **Professional Templates** - Multiple ATS-friendly resume templates
-- � **Smart Suggestions** - AI-driven content recommendations
-- 🔍 **Keyword Optimization** - Industry-specific keyword suggestions
+- 🤖 **AI-Powered Resume Assistant** - Get intelligent suggestions using Cohere AI
+- 📊 **Real-time ATS Score** - Instant feedback on resume optimization (0-100 scale)
+- 🎨 **Professional Templates** - 6 ATS-friendly resume templates:
+  - Modern - Clean and contemporary design
+  - Executive - Professional leadership-focused layout
+  - Creative - Unique design for creative professionals
+  - Minimal - Simple and elegant
+  - Academic - Research and education focused
+  - Technical - Developer and engineer optimized
+- 💡 **Smart Suggestions** - AI-driven content recommendations
+- 🔍 **Keyword Optimization** - Industry-specific keyword analysis
 - 📱 **Responsive Design** - Works seamlessly on all devices
-- 🔐 **Secure Authentication** - JWT-based user authentication
-- 💾 **Auto-save** - Never lose your work with automatic saving
+- 💾 **Auto-save** - Automatic saving to localStorage
 - 📄 **PDF Export** - Download professional PDF resumes
-- 🌐 **Multi-language Support** - Support for multiple languages
-
-### Enterprise Features
-- 🏗️ **Microservices Architecture** - Scalable and maintainable
-- 🐳 **Docker Support** - Easy deployment with Docker Compose
-- 📈 **Performance Optimized** - Compression, caching, and CDN ready
-- 🔒 **Security Hardened** - Helmet.js, CORS, rate limiting
-- 📊 **Monitoring Ready** - Prometheus metrics and health checks
-- 🗄️ **Database Backed** - PostgreSQL with Redis caching
-- 🔄 **CI/CD Ready** - GitHub Actions workflows included
+- 📈 **Analytics Dashboard** - Track views, downloads, and applications
+- 🎯 **Template Switcher** - Switch between templates in real-time
 
 ## 🏗️ Architecture
 
 ```
 ┌─────────────────┐
-│   Nginx Proxy   │ (Port 80/443)
+│  React Frontend │ (Port 5173)
+│   (TypeScript)  │
 └────────┬────────┘
          │
-    ┌────┴────┐
-    │         │
-┌───▼──┐  ┌──▼───┐
-│ API  │  │  AI  │
-│Gateway│  │Service│
-│(Node)│  │(Python)│
-└───┬──┘  └──┬───┘
-    │        │
-    └────┬───┘
+         │ HTTP/REST
          │
-    ┌────┴────┐
-    │         │
-┌───▼──┐  ┌──▼───┐
-│Postgres│ │Redis │
-└───────┘  └──────┘
+┌────────▼────────┐
+│   Backend API   │ (Port 3000)
+│   (Node.js +    │
+│    Express)     │
+└────────┬────────┘
+         │
+         ├──────────┐
+         │          │
+┌────────▼──┐  ┌───▼──────┐
+│ In-Memory │  │ Cohere   │
+│ Database  │  │ AI API   │
+└───────────┘  └──────────┘
 ```
 
 ### Components
 
-1. **Frontend** - Vanilla JS + React (TypeScript)
-2. **API Gateway** - Node.js/Express (Port 3000)
-3. **AI Service** - Python/FastAPI (Port 8000)
-4. **Database** - PostgreSQL (Port 5432)
-5. **Cache** - Redis (Port 6379)
-6. **Reverse Proxy** - Nginx (Port 80)
+1. **Frontend** - React 18 + TypeScript + Vite (Port 5173)
+2. **Backend API** - Node.js/Express (Port 3000)
+3. **Database** - In-memory storage (for demo)
+4. **AI Service** - Cohere API integration
 
 ## 🛠️ Tech Stack
 
 ### Backend
-- **Node.js** (v18+) - API Gateway
+- **Node.js** (v18+) - Runtime environment
 - **Express.js** - Web framework
-- **Python** (v3.9+) - AI Service
-- **FastAPI** - Python web framework
-- **PostgreSQL** - Primary database
-- **Redis** - Caching layer
-
-### AI/ML
-- **OpenAI GPT-4** - Resume analysis and suggestions
-- **Anthropic Claude** - Alternative AI model
-- **Transformers** - NLP processing
-- **spaCy** - Text analysis
-- **scikit-learn** - ML algorithms
+- **Cohere AI** - AI-powered resume assistance
+- **CORS** - Cross-origin resource sharing
+- **Body-parser** - Request body parsing
 
 ### Frontend
 - **React 18** - UI framework
 - **TypeScript** - Type safety
-- **Vite** - Build tool
-- **TailwindCSS** - Styling
-- **Redux Toolkit** - State management
-- **React Query** - Data fetching
-- **Framer Motion** - Animations
-
-### DevOps
-- **Docker** - Containerization
-- **Docker Compose** - Multi-container orchestration
-- **Nginx** - Reverse proxy
-- **GitHub Actions** - CI/CD
+- **Vite** - Build tool and dev server
+- **TailwindCSS** - Utility-first CSS framework
+- **React Query** - Data fetching and caching
+- **Lucide React** - Icon library
+- **jsPDF** - PDF generation
 
 ## 📦 Prerequisites
 
 Before you begin, ensure you have the following installed:
 
 - **Node.js** >= 18.0.0 ([Download](https://nodejs.org/))
-- **Python** >= 3.9 ([Download](https://www.python.org/))
-- **PostgreSQL** >= 15 ([Download](https://www.postgresql.org/))
-- **Redis** >= 7 ([Download](https://redis.io/))
-- **Docker** & **Docker Compose** (Optional, for containerized deployment)
+- **npm** or **yarn** - Package manager
 - **Git** ([Download](https://git-scm.com/))
 
 ### API Keys Required
-- **OpenAI API Key** - Get from [OpenAI Platform](https://platform.openai.com/)
+- **Cohere API Key** - Get a free trial key from [Cohere Platform](https://dashboard.cohere.com/)
 
 ## 🚀 Installation
 
-### Option 1: Local Development Setup
-
-#### 1. Clone the Repository
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/Venkatareddy26/SmartATS-Resume-Builder.git
 cd SmartATS-Resume-Builder/Ats/smartats_resume_builder
 ```
 
-#### 2. Install Backend Dependencies
+### 2. Install Backend Dependencies
 ```bash
 npm install
 ```
 
-#### 3. Install AI Service Dependencies
-```bash
-cd ai-service
-pip install -r requirements.txt
-# or using virtual environment (recommended)
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-cd ..
-```
-
-#### 4. Install Frontend Dependencies (React)
+### 3. Install Frontend Dependencies
 ```bash
 cd frontend-react
 npm install
 cd ..
 ```
 
-#### 5. Setup Database
-```bash
-# Start PostgreSQL and create database
-createdb smartats
-
-# Run schema
-psql -d smartats -f database/schema.sql
-```
-
-#### 6. Setup Redis
-```bash
-# Start Redis server
-redis-server
-```
-
-### Option 2: Docker Setup (Recommended)
-
-#### 1. Clone the Repository
-```bash
-git clone https://github.com/Venkatareddy26/SmartATS-Resume-Builder.git
-cd SmartATS-Resume-Builder/Ats/smartats_resume_builder
-```
-
-#### 2. Build and Start All Services
-```bash
-docker-compose up -d
-```
-
-That's it! All services will be automatically configured and started.
-
-## ⚙️ Configuration
-
-### 1. Environment Variables
+### 4. Configure Environment Variables
 
 Create a `.env` file in the root directory:
 
 ```bash
-cp .env.example .env
-```
-
-Edit `.env` with your configuration:
-
-```env
-# Server Configuration
 PORT=3000
+JWT_SECRET=smartats_secret_key_2024_demo
 NODE_ENV=development
-
-# Security
-JWT_SECRET=your_super_secret_jwt_key_change_this_in_production
-
-# OpenAI Configuration
-OPENAI_API_KEY=sk-your-openai-api-key-here
-
-# Database (if not using Docker)
-DATABASE_URL=postgresql://smartats_user:smartats_password@localhost:5432/smartats
-
-# Redis (if not using Docker)
-REDIS_URL=redis://localhost:6379/0
-
-# AI Service URL
-AI_SERVICE_URL=http://localhost:8000
+COHERE_API_KEY=your_cohere_api_key_here
 ```
 
-### 2. AI Service Configuration
-
-Create `.env` in `ai-service/` directory:
-
-```env
-ENVIRONMENT=development
-DEBUG=true
-OPENAI_API_KEY=sk-your-openai-api-key-here
-DATABASE_URL=postgresql+asyncpg://smartats_user:smartats_password@localhost:5432/smartats
-REDIS_URL=redis://localhost:6379/0
-```
-
-### 3. Frontend Configuration
-
-Create `.env` in `frontend-react/` directory:
-
-```env
-VITE_API_URL=http://localhost:3000/api
-VITE_APP_NAME=SmartATS Resume Builder
-```
+Replace `your_cohere_api_key_here` with your actual Cohere API key.
 
 ## 🏃 Running the Application
 
 ### Development Mode
 
-#### Option 1: Run All Services Separately
+Open two terminal windows:
 
 **Terminal 1 - Backend API:**
 ```bash
 npm run dev
-# Server runs on http://localhost:3000
 ```
+Server runs on `http://localhost:3000`
 
-**Terminal 2 - AI Service:**
-```bash
-npm run ai:dev
-# AI Service runs on http://localhost:8000
-```
-
-**Terminal 3 - React Frontend:**
+**Terminal 2 - React Frontend:**
 ```bash
 cd frontend-react
 npm run dev
-# Frontend runs on http://localhost:5173
 ```
+Frontend runs on `http://localhost:5173`
 
-#### Option 2: Using Docker Compose
-```bash
-# Start all services
-docker-compose up
-
-# Or run in detached mode
-docker-compose up -d
-
-# View logs
-docker-compose logs -f
-
-# Stop all services
-docker-compose down
-```
+Then open your browser and navigate to `http://localhost:5173`
 
 ### Production Mode
 
@@ -297,11 +168,6 @@ cd ..
 NODE_ENV=production npm start
 ```
 
-#### 3. Using Docker
-```bash
-docker-compose -f docker-compose.prod.yml up -d
-```
-
 ## 📡 API Documentation
 
 ### Base URL
@@ -309,61 +175,42 @@ docker-compose -f docker-compose.prod.yml up -d
 http://localhost:3000/api
 ```
 
-### Authentication Endpoints
-
-#### Register User
-```http
-POST /api/auth/register
-Content-Type: application/json
-
-{
-  "email": "user@example.com",
-  "password": "securePassword123",
-  "name": "John Doe"
-}
-```
-
-#### Login
-```http
-POST /api/auth/login
-Content-Type: application/json
-
-{
-  "email": "user@example.com",
-  "password": "securePassword123"
-}
-```
-
 ### Resume Endpoints
 
 #### Create Resume
 ```http
 POST /api/resumes
-Authorization: Bearer <token>
 Content-Type: application/json
 
 {
   "title": "Software Engineer Resume",
-  "content": { ... }
+  "template": "modern",
+  "personalInfo": {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "phone": "+1234567890",
+    "location": "San Francisco, CA"
+  },
+  "summary": "Experienced software engineer...",
+  "experience": [...],
+  "education": [...],
+  "skills": [...]
 }
 ```
 
 #### Get All Resumes
 ```http
 GET /api/resumes
-Authorization: Bearer <token>
 ```
 
 #### Get Resume by ID
 ```http
 GET /api/resumes/:id
-Authorization: Bearer <token>
 ```
 
 #### Update Resume
 ```http
 PUT /api/resumes/:id
-Authorization: Bearer <token>
 Content-Type: application/json
 
 {
@@ -375,44 +222,39 @@ Content-Type: application/json
 #### Delete Resume
 ```http
 DELETE /api/resumes/:id
-Authorization: Bearer <token>
+```
+
+#### Track Resume View
+```http
+POST /api/resumes/:id/view
+```
+
+#### Track Resume Download
+```http
+POST /api/resumes/:id/download
+```
+
+#### Track Resume Application
+```http
+POST /api/resumes/:id/application
 ```
 
 ### AI Endpoints
 
-#### Analyze Resume
+#### Get AI Suggestions
 ```http
-POST /api/ai/analyze
-Authorization: Bearer <token>
+POST /api/ai/chat
 Content-Type: application/json
 
 {
-  "resumeText": "Your resume content here...",
-  "jobDescription": "Job description (optional)"
+  "message": "How can I improve my resume summary?"
 }
 ```
 
-#### Get Keyword Suggestions
-```http
-POST /api/ai/keywords
-Authorization: Bearer <token>
-Content-Type: application/json
-
+Response:
+```json
 {
-  "industry": "Software Engineering",
-  "role": "Full Stack Developer"
-}
-```
-
-#### Improve Content
-```http
-POST /api/ai/improve
-Authorization: Bearer <token>
-Content-Type: application/json
-
-{
-  "text": "Content to improve",
-  "context": "work_experience"
+  "response": "AI-generated suggestion..."
 }
 ```
 
@@ -435,52 +277,44 @@ Response:
 
 ```
 smartats_resume_builder/
-├── ai-service/              # Python AI microservice
-│   ├── app/
-│   │   ├── main.py         # FastAPI application
-│   │   ├── models/         # AI models
-│   │   ├── services/       # Business logic
-│   │   └── utils/          # Utilities
-│   ├── requirements.txt    # Python dependencies
-│   └── Dockerfile
-│
-├── backend/                # Node.js API Gateway
-│   ├── routes/            # API routes
-│   │   ├── auth.js        # Authentication
-│   │   ├── resumes.js     # Resume CRUD
+├── backend/                # Node.js Backend
+│   ├── routes/
+│   │   ├── resumes.js     # Resume CRUD operations
 │   │   └── ai.js          # AI integration
-│   ├── database.js        # Database connection
+│   ├── database.js        # In-memory database
 │   └── server.js          # Express server
 │
-├── frontend/              # Vanilla JS frontend
-│   ├── index.html         # Login page
-│   ├── editor.html        # Resume editor
-│   ├── landing.html       # Landing page
-│   └── js/                # JavaScript files
-│
-├── frontend-react/        # React frontend (TypeScript)
+├── frontend-react/        # React Frontend
 │   ├── src/
-│   │   ├── components/    # React components
+│   │   ├── components/    # Reusable components
 │   │   ├── pages/         # Page components
-│   │   ├── store/         # Redux store
-│   │   ├── hooks/         # Custom hooks
+│   │   │   ├── LandingPage.tsx
+│   │   │   ├── EditorPage.tsx
+│   │   │   ├── TemplatesPage.tsx
+│   │   │   ├── AnalyticsPage.tsx
+│   │   │   └── AIAssistantPage.tsx
 │   │   ├── services/      # API services
-│   │   └── utils/         # Utilities
+│   │   ├── types/         # TypeScript types
+│   │   ├── App.tsx        # Main app component
+│   │   └── main.tsx       # Entry point
 │   ├── package.json
-│   └── vite.config.ts
+│   ├── vite.config.ts
+│   └── tailwind.config.js
 │
-├── database/              # Database files
-│   └── schema.sql         # Database schema
-│
-├── docs/                  # Documentation
-│   ├── architecture/      # Architecture docs
-│   └── guides/            # User guides
-│
-├── docker-compose.yml     # Docker orchestration
-├── package.json           # Node dependencies
+├── .env                   # Environment variables
 ├── .env.example           # Environment template
+├── package.json           # Backend dependencies
 └── README.md              # This file
 ```
+
+## 🎨 Available Templates
+
+1. **Modern** - Clean, contemporary design perfect for tech professionals
+2. **Executive** - Professional layout for leadership positions
+3. **Creative** - Unique design for creative industries
+4. **Minimal** - Simple and elegant for any profession
+5. **Academic** - Research and education focused
+6. **Technical** - Optimized for developers and engineers
 
 ## 🔧 Development
 
@@ -488,10 +322,6 @@ smartats_resume_builder/
 
 #### Backend (JavaScript)
 ```bash
-# Format code
-npm run format
-
-# Lint code
 npm run lint
 ```
 
@@ -499,21 +329,7 @@ npm run lint
 ```bash
 cd frontend-react
 npm run lint
-npm run format
 npm run type-check
-```
-
-### Database Migrations
-
-```bash
-# Create new migration
-npm run migrate:create
-
-# Run migrations
-npm run migrate:up
-
-# Rollback migration
-npm run migrate:down
 ```
 
 ### Adding New Features
@@ -522,122 +338,6 @@ npm run migrate:down
 2. Make changes and commit: `git commit -am 'Add new feature'`
 3. Push to branch: `git push origin feature/your-feature`
 4. Create Pull Request
-
-## 🧪 Testing
-
-### Backend Tests
-```bash
-npm test
-```
-
-### AI Service Tests
-```bash
-npm run ai:test
-# or
-cd ai-service
-pytest tests/ -v
-```
-
-### Frontend Tests
-```bash
-cd frontend-react
-npm test
-```
-
-### Integration Tests
-```bash
-npm run test:integration
-```
-
-### E2E Tests
-```bash
-npm run test:e2e
-```
-
-## 🚢 Deployment
-
-### Docker Deployment
-
-#### 1. Build Images
-```bash
-docker-compose build
-```
-
-#### 2. Deploy to Production
-```bash
-docker-compose -f docker-compose.prod.yml up -d
-```
-
-### Manual Deployment
-
-#### 1. Build Frontend
-```bash
-cd frontend-react
-npm run build
-```
-
-#### 2. Set Environment
-```bash
-export NODE_ENV=production
-export PORT=3000
-```
-
-#### 3. Start Services
-```bash
-# Start backend
-npm start
-
-# Start AI service
-cd ai-service
-uvicorn app.main:app --host 0.0.0.0 --port 8000
-```
-
-### Cloud Deployment
-
-#### AWS
-- Use ECS/EKS for container orchestration
-- RDS for PostgreSQL
-- ElastiCache for Redis
-- S3 for static assets
-- CloudFront for CDN
-
-#### Heroku
-```bash
-heroku create smartats-app
-heroku addons:create heroku-postgresql
-heroku addons:create heroku-redis
-git push heroku main
-```
-
-#### DigitalOcean
-- Use App Platform or Kubernetes
-- Managed PostgreSQL
-- Managed Redis
-
-## 📊 Monitoring
-
-### Health Checks
-```bash
-# API Health
-curl http://localhost:3000/api/health
-
-# AI Service Health
-curl http://localhost:8000/health
-```
-
-### Logs
-```bash
-# Docker logs
-docker-compose logs -f
-
-# Specific service
-docker-compose logs -f api-gateway
-docker-compose logs -f ai-service
-```
-
-### Metrics
-- Prometheus metrics available at `/metrics`
-- Grafana dashboards included in `monitoring/`
 
 ## 🤝 Contributing
 
@@ -651,45 +351,70 @@ We welcome contributions! Please follow these steps:
 
 ### Contribution Guidelines
 - Follow the existing code style
-- Write tests for new features
-- Update documentation
+- Write clean, maintainable code
+- Update documentation as needed
 - Keep commits atomic and well-described
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👥 Authors
+## 👥 Author
 
 - **Venkata Reddy** - [GitHub](https://github.com/Venkatareddy26)
 
 ## 🙏 Acknowledgments
 
-- OpenAI for GPT-4 API
-- FastAPI framework
+- Cohere AI for providing the AI API
 - React and Vite communities
+- TailwindCSS team
 - All contributors and supporters
 
 ## 📞 Support
 
-- 📧 Email: support@smartats.com
 - 🐛 Issues: [GitHub Issues](https://github.com/Venkatareddy26/SmartATS-Resume-Builder/issues)
 - 💬 Discussions: [GitHub Discussions](https://github.com/Venkatareddy26/SmartATS-Resume-Builder/discussions)
 
 ## 🗺️ Roadmap
 
-- [ ] Multi-language support
-- [ ] Advanced AI models integration
-- [ ] Resume templates marketplace
-- [ ] LinkedIn integration
+- [ ] User authentication and accounts
+- [ ] Cloud database integration (PostgreSQL/MongoDB)
+- [ ] More resume templates
+- [ ] LinkedIn profile import
 - [ ] Job board integration
+- [ ] Cover letter generator
 - [ ] Mobile app (React Native)
 - [ ] Chrome extension
 - [ ] Team collaboration features
-- [ ] Analytics dashboard
-- [ ] API rate limiting
-- [ ] GraphQL API
+- [ ] Advanced analytics dashboard
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/Venkatareddy26/SmartATS-Resume-Builder.git
+
+# Navigate to project directory
+cd SmartATS-Resume-Builder/Ats/smartats_resume_builder
+
+# Install backend dependencies
+npm install
+
+# Install frontend dependencies
+cd frontend-react && npm install && cd ..
+
+# Create .env file and add your Cohere API key
+echo "COHERE_API_KEY=your_key_here" > .env
+
+# Start backend (Terminal 1)
+npm run dev
+
+# Start frontend (Terminal 2)
+cd frontend-react && npm run dev
+```
+
+Visit `http://localhost:5173` and start building your resume!
 
 ---
 
-Made with ❤️ by the SmartATS Team
+Made with ❤️ by Venkata Reddy
