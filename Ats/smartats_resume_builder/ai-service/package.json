@@ -1,0 +1,25 @@
+{
+  "name": "smartats-ai-service",
+  "version": "2.0.0",
+  "description": "SmartATS AI Service - FastAPI-based resume analysis and optimization",
+  "scripts": {
+    "dev": "uvicorn app.main:app --reload --port 8000",
+    "start": "uvicorn app.main:app --host 0.0.0.0 --port 8000",
+    "test": "pytest tests/ -v",
+    "test:cov": "pytest tests/ -v --cov=app --cov-report=html",
+    "lint": "flake8 app/",
+    "format": "black app/",
+    "type-check": "mypy app/",
+    "install": "pip install -r requirements.txt && python -m spacy download en_core_web_sm"
+  },
+  "keywords": [
+    "ai",
+    "resume",
+    "ats",
+    "nlp",
+    "fastapi",
+    "machine-learning"
+  ],
+  "author": "SmartATS Team",
+  "license": "PROPRIETARY"
+}
